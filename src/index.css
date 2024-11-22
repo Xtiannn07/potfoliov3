@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply bg-background text-white font-sans;
+    @apply text-white font-sans;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -32,6 +32,6 @@
   }
 
   .cta-button {
-    @apply px-8 py-3 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-background transition-all duration-300 font-display tracking-wide;
+    @apply px-8 py-3 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-background-start transition-all duration-300 font-display tracking-wide;
   }
 }
