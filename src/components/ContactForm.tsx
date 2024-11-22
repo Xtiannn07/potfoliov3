@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { toast } from 'sonner';
 
 const ContactForm = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -17,11 +18,11 @@ const ContactForm = () => {
       '9hohlHYh-6JdA42tS'
     )
       .then(() => {
-        alert('Message sent successfully!');
+        toast.success('Message sent successfully!');
         if (form.current) form.current.reset();
       })
       .catch((error) => {
-        alert('Failed to send message. Please try again.');
+        toast.error('Failed to send message. Please try again.');
         console.error(error);
       })
       .finally(() => {
@@ -30,8 +31,8 @@ const ContactForm = () => {
   };
 
   return (
-    <form ref={form} onSubmit={sendEmail} className="space-y-6 max-w-md mx-auto">
-      <div>
+    <form ref={form} onSubmit={sendEmail} className="space-y-6 max-w-md mx-auto" id="form">
+      <div className="field">
         <label htmlFor="from_name" className="block text-sm font-medium mb-2">
           Name
         </label>
@@ -44,7 +45,7 @@ const ContactForm = () => {
         />
       </div>
       
-      <div>
+      <div className="field">
         <label htmlFor="email_id" className="block text-sm font-medium mb-2">
           Email
         </label>
@@ -57,7 +58,7 @@ const ContactForm = () => {
         />
       </div>
       
-      <div>
+      <div className="field">
         <label htmlFor="message" className="block text-sm font-medium mb-2">
           Message
         </label>
@@ -72,6 +73,7 @@ const ContactForm = () => {
       
       <button
         type="submit"
+        id="button"
         disabled={isSending}
         className="w-full cta-button disabled:opacity-50"
       >

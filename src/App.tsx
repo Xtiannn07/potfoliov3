@@ -2,12 +2,11 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
+import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
-import Navbar from "./components/Navbar";
+import Index from "./pages/Index";
 
 const queryClient = new QueryClient();
 
@@ -17,15 +16,21 @@ const App = () => (
       <div className="min-h-screen bg-gradient-to-b from-background-start to-background-end">
         <Toaster />
         <Sonner />
-        <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </BrowserRouter>
+        <main className="relative">
+          <section id="home" className="min-h-screen">
+            <Index />
+          </section>
+          <section id="about" className="min-h-screen py-20">
+            <About />
+          </section>
+          <section id="projects" className="min-h-screen py-20">
+            <Projects />
+          </section>
+          <section id="contact" className="min-h-screen py-20">
+            <Contact />
+          </section>
+        </main>
+        <Navbar />
       </div>
     </TooltipProvider>
   </QueryClientProvider>
