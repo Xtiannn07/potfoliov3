@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, RefObject } from 'react';
 
-export const useIntersectionObserver = (options = {}) => {
-  const elementRef = useRef(null);
+export const useIntersectionObserver = (options = {}): [RefObject<HTMLDivElement>, boolean] => {
+  const elementRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
