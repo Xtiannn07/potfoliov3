@@ -6,16 +6,30 @@ const Projects = () => {
   
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution built with React, Node.js, and MongoDB",
-      tech: ["React", "Node.js", "MongoDB", "Redux"],
+      title: "Website Portfolio",
+      description: "Personal Portfolio with the aim of showcasing my capabilities",
+      tech: ["React", "Tailwind", "Next.js", "Vite"],
       link: "#",
       icon: <Boxes className="w-6 h-6" />
     },
     {
-      title: "Task Management System",
-      description: "Real-time task management application with team collaboration features",
-      tech: ["TypeScript", "Socket.io", "Express", "PostgreSQL"],
+      title: "Card Game",
+      description: "Simple Card Game that was developed for 4hrs",
+      tech: ["Javascript", "Css", "Html",],
+      link: "#",
+      icon: <Code className="w-6 h-6" />
+    },
+    {
+      title: "On progress",
+      description: "Still working on some project",
+      tech: ["Typescript", "Css", "Html",],
+      link: "#",
+      icon: <Code className="w-6 h-6" />
+    },
+    {
+      title: "On progress",
+      description: "Still working on some project",
+      tech: ["Typescript", "Css", "Html",],
       link: "#",
       icon: <Code className="w-6 h-6" />
     }
