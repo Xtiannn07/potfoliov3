@@ -1,6 +1,9 @@
 import { ExternalLink, Boxes, Code } from "lucide-react";
+import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 
 const Projects = () => {
+  const [sectionRef, isVisible, isScrollingDown] = useIntersectionObserver();
+  
   const projects = [
     {
       title: "E-Commerce Platform",
@@ -19,7 +22,12 @@ const Projects = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-12 opacity-0 translate-y-4 animate-fade-in">
+    <div 
+      ref={sectionRef}
+      className={`container mx-auto px-4 py-12 section-content ${
+        isVisible ? 'visible' : isScrollingDown ? 'slide-down' : 'slide-up'
+      }`}
+    >
       <h1 className="text-4xl font-bold mb-8 text-primary">Projects</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">

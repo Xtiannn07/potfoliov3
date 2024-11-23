@@ -1,10 +1,20 @@
 import { useEffect, useRef, useState, RefObject } from 'react';
 
-export const useIntersectionObserver = (options = {}): [RefObject<HTMLDivElement>, boolean] => {
+export const useIntersectionObserver = (options = {}): [RefObject<HTMLDivElement>, boolean, boolean] => {
   const elementRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isScrollingDown, setIsScrollingDown] = useState(true);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsScrollingDown(currentScrollY > lastScrollY.current);
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setIsVisible(true);
@@ -25,8 +35,9 @@ export const useIntersectionObserver = (options = {}): [RefObject<HTMLDivElement
       if (currentElement) {
         observer.unobserve(currentElement);
       }
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [options]);
 
-  return [elementRef, isVisible];
+  return [elementRef, isVisible, isScrollingDown];
 };

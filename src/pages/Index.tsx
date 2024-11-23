@@ -1,11 +1,17 @@
 import Navbar from '../components/Navbar';
 import { Github, Mail, User } from 'lucide-react';
+import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 
 const Index = () => {
+  const [sectionRef, isVisible, isScrollingDown] = useIntersectionObserver();
+
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      
+    <div 
+      ref={sectionRef}
+      className={`min-h-screen section-content ${
+        isVisible ? 'visible' : isScrollingDown ? 'slide-down' : 'slide-up'
+      }`}
+    >
       <main className="container mx-auto pt-32">
         <section className="flex flex-col md:flex-row items-center justify-between gap-12 min-h-[calc(100vh-8rem)]">
           <div className="flex-1 space-y-6 animate-fade-in">

@@ -2,7 +2,7 @@ import { Code2, Cpu, Database, Globe } from "lucide-react";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 
 const About = () => {
-  const [sectionRef, isVisible] = useIntersectionObserver();
+  const [sectionRef, isVisible, isScrollingDown] = useIntersectionObserver();
   
   const skills = [
     { icon: <Code2 className="w-6 h-6" />, name: "Frontend Development", description: "Expert in React, TypeScript, and modern web technologies" },
@@ -14,7 +14,9 @@ const About = () => {
   return (
     <div 
       ref={sectionRef}
-      className={`container mx-auto px-4 py-12 section-content ${isVisible ? 'visible' : ''}`}
+      className={`container mx-auto px-4 py-12 section-content ${
+        isVisible ? 'visible' : isScrollingDown ? 'slide-down' : 'slide-up'
+      }`}
     >
       <h1 className="text-4xl font-bold mb-8 text-primary">About Me</h1>
       
