@@ -32,7 +32,7 @@ const Index = () => {
           <div className="flex-1 flex justify-center">
             <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-primary animate-fade-in">
               <img
-                src="/lovable-uploads/c0cf2f3d-142d-452a-ab0a-3bb07692004d.png"
+                src="./lovable-uploads/c0cf2f3d-142d-452a-ab0a-3bb07692004d.png"
                 alt="Profile"
                 className="w-full h-full object-cover"
               />
