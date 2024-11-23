@@ -42,6 +42,14 @@
   .cta-button {
     @apply px-8 py-3 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-background-start transition-all duration-300 font-display tracking-wide;
   }
+
+  .section-content {
+    @apply opacity-0 translate-y-10 transition-all duration-700;
+  }
+
+  .section-content.visible {
+    @apply opacity-100 translate-y-0;
+  }
 }
 
 .animate-fade-in {

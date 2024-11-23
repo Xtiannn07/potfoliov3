@@ -1,6 +1,9 @@
 import { Code2, Cpu, Database, Globe } from "lucide-react";
+import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 
 const About = () => {
+  const [sectionRef, isVisible] = useIntersectionObserver();
+  
   const skills = [
     { icon: <Code2 className="w-6 h-6" />, name: "Frontend Development", description: "Expert in React, TypeScript, and modern web technologies" },
     { icon: <Database className="w-6 h-6" />, name: "Backend Development", description: "Proficient in Node.js, Python, and database management" },
@@ -9,7 +12,10 @@ const About = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-12 opacity-0 translate-y-4 animate-fade-in">
+    <div 
+      ref={sectionRef}
+      className={`container mx-auto px-4 py-12 section-content ${isVisible ? 'visible' : ''}`}
+    >
       <h1 className="text-4xl font-bold mb-8 text-primary">About Me</h1>
       
       <div className="max-w-3xl mx-auto">
