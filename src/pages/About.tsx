@@ -9,7 +9,7 @@ const About = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-24">
+    <div className="container mx-auto px-4 py-12 opacity-0 translate-y-4 animate-fade-in">
       <h1 className="text-4xl font-bold mb-8 text-primary">About Me</h1>
       
       <div className="max-w-3xl mx-auto">
@@ -21,7 +21,10 @@ const About = () => {
         <h2 className="text-2xl font-bold mb-6 text-primary">Skills & Expertise</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {skills.map((skill, index) => (
-            <div key={index} className="p-6 rounded-lg bg-gray-800/50 hover:bg-gray-800/70 transition-colors">
+            <div 
+              key={index} 
+              className="p-6 rounded-lg bg-gray-800/50 hover:bg-gray-800/70 transition-all duration-300 transform hover:-translate-y-1"
+            >
               <div className="flex items-center mb-4 text-primary">
                 {skill.icon}
                 <h3 className="text-xl font-bold ml-3">{skill.name}</h3>

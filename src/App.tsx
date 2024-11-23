@@ -20,13 +20,13 @@ const App = () => (
           <section id="home" className="min-h-screen">
             <Index />
           </section>
-          <section id="about" className="min-h-screen py-20">
+          <section id="about" className="min-h-screen">
             <About />
           </section>
-          <section id="projects" className="min-h-screen py-20">
+          <section id="projects" className="min-h-screen">
             <Projects />
           </section>
-          <section id="contact" className="min-h-screen py-20">
+          <section id="contact" className="min-h-screen">
             <Contact />
           </section>
         </main>

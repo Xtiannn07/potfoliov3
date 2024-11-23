@@ -1,4 +1,4 @@
-import { Github, ExternalLink, Code, Boxes } from "lucide-react";
+import { ExternalLink, Boxes, Code } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -6,27 +6,28 @@ const Projects = () => {
       title: "E-Commerce Platform",
       description: "A full-stack e-commerce solution built with React, Node.js, and MongoDB",
       tech: ["React", "Node.js", "MongoDB", "Redux"],
-      github: "#",
-      live: "#",
+      link: "#",
       icon: <Boxes className="w-6 h-6" />
     },
     {
       title: "Task Management System",
       description: "Real-time task management application with team collaboration features",
       tech: ["TypeScript", "Socket.io", "Express", "PostgreSQL"],
-      github: "#",
-      live: "#",
+      link: "#",
       icon: <Code className="w-6 h-6" />
     }
   ];
 
   return (
-    <div className="container mx-auto px-4 py-24">
+    <div className="container mx-auto px-4 py-12 opacity-0 translate-y-4 animate-fade-in">
       <h1 className="text-4xl font-bold mb-8 text-primary">Projects</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
         {projects.map((project, index) => (
-          <div key={index} className="bg-gray-800/50 rounded-lg p-6 hover:bg-gray-800/70 transition-colors">
+          <div 
+            key={index} 
+            className="bg-gray-800/50 rounded-lg p-6 hover:bg-gray-800/70 transition-all duration-300 transform hover:-translate-y-1"
+          >
             <div className="flex items-center mb-4 text-primary">
               {project.icon}
               <h3 className="text-2xl font-bold ml-3">{project.title}</h3>
@@ -42,16 +43,15 @@ const Projects = () => {
               ))}
             </div>
             
-            <div className="flex space-x-4">
-              <a href={project.github} className="flex items-center text-primary hover:text-primary/80">
-                <Github className="w-5 h-5 mr-2" />
-                Code
-              </a>
-              <a href={project.live} className="flex items-center text-primary hover:text-primary/80">
-                <ExternalLink className="w-5 h-5 mr-2" />
-                Live Demo
-              </a>
-            </div>
+            <a 
+              href={project.link} 
+              className="inline-flex items-center text-primary hover:text-primary/80 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ExternalLink className="w-5 h-5 mr-2" />
+              View Project
+            </a>
           </div>
         ))}
       </div>

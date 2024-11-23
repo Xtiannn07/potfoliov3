@@ -16,6 +16,10 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-wider;
   }
+
+  section {
+    scroll-margin-top: 2rem;
+  }
 }
 
 @layer components {
@@ -37,5 +41,20 @@
 
   .cta-button {
     @apply px-8 py-3 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-background-start transition-all duration-300 font-display tracking-wide;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

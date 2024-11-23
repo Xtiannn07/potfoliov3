@@ -3,7 +3,7 @@ import ContactForm from "../components/ContactForm";
 
 const Contact = () => {
   return (
-    <div className="container mx-auto px-4 py-24">
+    <div className="container mx-auto px-4 py-12 opacity-0 translate-y-4 animate-fade-in">
       <h1 className="text-4xl font-bold mb-8 text-primary">Get in Touch</h1>
       
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -29,7 +29,7 @@ const Contact = () => {
           </div>
         </div>
         
-        <div className="bg-gray-800/50 p-6 rounded-lg">
+        <div className="bg-gray-800/50 p-6 rounded-lg transform transition-all duration-300 hover:-translate-y-1">
           <h2 className="text-2xl font-bold mb-6 flex items-center">
             <Send className="w-6 h-6 mr-3 text-primary" />
             Send a Message
