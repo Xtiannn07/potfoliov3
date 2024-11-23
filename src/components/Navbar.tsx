@@ -28,7 +28,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
+ const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -36,39 +36,35 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 
+    <nav className={`fixed w-full md:w-full z-50 transition-all duration-300 
       md:top-0 bottom-0 md:bottom-auto
       ${isScrolled ? 'bg-background-start/90 backdrop-blur-sm py-4' : 'py-6'}`}>
       <div className="container mx-auto flex justify-between items-center">
         <button 
           onClick={() => scrollToSection('home')}
-          className="text-2xl font-display text-primary md:block hidden"
-        >
+          className="text-2xl font-display text-primary md:block hidden">
           PORTFOLIO
         </button>
-        <div className="flex md:space-x-8 w-full md:w-auto justify-around md:justify-end">
+
+        <div className="flex text-sm md:text-base space-x-auto w-full justify-center md:justify-end">
           <button 
             onClick={() => scrollToSection('home')}
-            className={`nav-link ${activeSection === 'home' ? 'text-primary after:w-full' : ''}`}
-          >
+            className={`nav-link ${activeSection === 'home' ? 'text-primary after:w-full' : ''}`}>
             HOME
           </button>
           <button 
             onClick={() => scrollToSection('about')}
-            className={`nav-link ${activeSection === 'about' ? 'text-primary after:w-full' : ''}`}
-          >
+            className={`nav-link ${activeSection === 'about' ? 'text-primary after:w-full' : ''}`}>
             ABOUT
           </button>
           <button 
             onClick={() => scrollToSection('projects')}
-            className={`nav-link ${activeSection === 'projects' ? 'text-primary after:w-full' : ''}`}
-          >
+            className={`nav-link ${activeSection === 'projects' ? 'text-primary after:w-full' : ''}`}>
             PROJECTS
           </button>
           <button 
             onClick={() => scrollToSection('contact')}
-            className={`nav-link ${activeSection === 'contact' ? 'text-primary after:w-full' : ''}`}
-          >
+            className={`nav-link ${activeSection === 'contact' ? 'text-primary after:w-full' : ''}`}>
             CONTACT
           </button>
         </div>

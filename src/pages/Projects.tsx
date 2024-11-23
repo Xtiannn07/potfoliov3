@@ -1,4 +1,4 @@
-import { ExternalLink, Boxes, Code } from "lucide-react";
+import { ExternalLink, Boxes, Code, Brain, Club, } from "lucide-react";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 
 const Projects = () => {
@@ -17,14 +17,14 @@ const Projects = () => {
       description: "Simple Card Game that was developed for 4hrs",
       tech: ["Javascript", "Css", "Html",],
       link: "#",
-      icon: <Code className="w-6 h-6" />
+      icon: <Club className="w-6 h-6" />
     },
     {
-      title: "On progress",
-      description: "Still working on some project",
-      tech: ["Typescript", "Css", "Html",],
+      title: "Capstone-AquaDrone",
+      description: "Autonomous waste collector on a septic tank",
+      tech: ["Machine Learning", "Linux", "AI", "Python",,],
       link: "#",
-      icon: <Code className="w-6 h-6" />
+      icon: <Brain className="w-6 h-6" />
     },
     {
       title: "On progress",
