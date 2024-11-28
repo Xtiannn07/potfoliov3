@@ -14,7 +14,7 @@ const Projects = () => {
     },
     {
       title: "Card Game",
-      description: "Simple Card Game that was developed for 4hrs",
+      description: "Simple Card Game that was developed within 4hrs",
       tech: ["Javascript", "Css", "Html",],
       link: "#",
       icon: <Club className="w-6 h-6" />
@@ -27,10 +27,10 @@ const Projects = () => {
       icon: <Brain className="w-6 h-6" />
     },
     {
-      title: "On progress",
-      description: "Still working on some project",
-      tech: ["Typescript", "Css", "Html",],
-      link: "#",
+      title: "Search for Disney Characters",
+      description: "Fetching Data of Disney Characters with the open source Data Api",
+      tech: ["Typescript", "React", "Vite", "Tailwind", ],
+      link: "https://disneycharacters.vercel.app/",
       icon: <Code className="w-6 h-6" />
     }
   ];
